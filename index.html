@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+    <title>Xdigital</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        #app {
+            width: 90%;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .section {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .logo {
+            width: 100px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #070218;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+        
+        nav > ul {
+            margin: 0;
+        }
+
+        nav ul li {
+            display: block;
+            float: center;
+            
+            position: relative;
+        }
+
+        nav ul a {
+            display: block;
+            float: left;
+            width: 80px;
+            padding: 10px 20px;
+        }
+
+
+        nav ul li ul li {
+            float: none;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            top: 40px;
+        }
+
+        nav ul li:hover > ul {
+            display: block;
+        }
+
+        nav ul li a {
+            display: block;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Libre Baskerville', serif;
+            color: #333333;
+            background-color: #93aae3;
+            overflow-x: hidden;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: #000000fb;
+            color: #0a0600;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-family: 'Playfair Display', serif;
+        }
+        header nav ul {
+            display: flex;
+            gap: 30px;
+        }
+        header nav ul li {
+            padding: 10px 20px;
+            transition: background 0.3s ease;
+        }
+        #socialMedia .socialIcon:hover {
+        cursor: pointer;
+        transform: rotate(15deg);
+        }
+        #socialMedia {
+        margin: 20px auto;
+        font-family: poppins, sans-serif;
+        text-align: center;
+        }
+        #iconContainer {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        }
+        #socialMedia .socialIcon {
+        height: 50px
+        }
+        #socialMedia .socialIcon:hover {
+        cursor: pointer;
+        transform: rotate(15deg);
+        }
+        #socialMedia .socialIcon3 {
+        height: 35px
+        }
+        #socialMedia .socialIcon3:hover {
+        cursor: pointer;
+        transform: rotate(15deg);
+        }
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing:border-box;
+        font-family: sans-serif;
+    }
+        
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('img0.11.jpg') no-repeat center center/cover;
+            color: #f4f2ef;
+            text-align: center;
+            margin-top: 80px; /* Offset for fixed header */
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.472);
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 20px;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.2;
+            font-family: 'Playfair Display', serif;
+        }
+        .hero p {
+            margin: 20px 0;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        .hero button {
+            padding: 12px 35px;
+            font-size: 1rem;
+            background-color: #d4af3700;
+            border-radius: 10%;
+            color: #000;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: background 0.3s ease;
+            font-weight: bold;
+            border-color: #d4af37;
+        }
+        .hero button:hover {
+            background-color: #cda43405;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 100px;
+            text-align: center;
+            background-color: #e1dbd72d;
+            position: relative;
+        }
+        .features h2 {
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: #222;
+            font-family: 'Playfair Display', serif;
+            text-transform: uppercase;
+        }
+        .features .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .features .feature {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .features .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .features .feature-icon {
+            font-size: 3rem;
+            color: #d4af37;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        .features .feature h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+        }
+        .features .feature p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        .features .feature::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.05);
+            transition: width 0.4s ease;
+            z-index: 0;
+        }
+        .features .feature:hover::before {
+            width: 100%;
+        }
+        .feature-img{
+            width:100%;
+        height:auto;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-primary " style="background-color: rgb(0, 0, 0)">
+            <a class="navbar-brand" href="#">
+                <img src="logo1.jpg" alt="Logo" style="width:50px; height: 50px; ">
+              </a>
+    
+    
+            <div class="container-fluid">
+              
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" style="color: azure;" href="home.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="color: azure;" href="#">Login</a>
+                  </li>
+                 
+                
+                  <li class="nav-item">
+                 
+                  </li>
+                </ul>
+                
+                <!-- <svg xmlns="http://www.w3.org/2000/svg"  width="16" height="16" style="color: azure;" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                  </svg> -->
+                
+    
+              </div>
+            </div>
+          </nav>
+    </header>
+
+    <div id="app">
+        <!-- Login Section -->
+        <div id="login" class="section">
+            
+            <h2>Login to Xdigital</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p id="loginError" class="error-message"></p>
+        </div>
+
+        <!-- Admin Dashboard -->
+        <div id="adminDashboard" class="section hidden">
+            <h2>Admin Dashboard</h2>
+            <p>Welcome, Admin! Manage the system here.</p>
+            <h3>Following are no. of employees working:</h3>
+            <h3>Ravia</h3>
+            <h3>Raghav Bansal</h3>
+            <h3>Dhruv Kundrai</h3>
+            <h3>Harshita Thakur</h3>
+            <h3>Archit Kapoor</h3>
+            <h3>Nobita</h3>
+            <h3>Sunio</h3>
+            <button id="logoutAdmin">Logout</button>
+           
+        </div>
+
+        <!-- Employee Dashboard -->
+        <div id="employeeDashboard" class="section hidden">
+            <h2>Employee Dashboard</h2>
+            <p>Welcome, Employee! View your tasks and updates here.</p>
+            <h3>Name-Ravia</h3>
+            <h3>Age- 19</h3>
+            <h3>Phone No.- 9877501513</h3>
+            <h3>Tasks completed:</h3>
+            <h4>Fiora</h4>
+            <h4>Newsletter</h4>
+            <h4>Gallery page</h4>
+            <h4>Coffee Hub</h4>
+            <button id="logoutEmployee">Logout</button>
+           
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.getElementById('loginForm');
+            const loginError = document.getElementById('loginError');
+            const adminDashboard = document.getElementById('adminDashboard');
+            const employeeDashboard = document.getElementById('employeeDashboard');
+            const loginSection = document.getElementById('login');
+            
+            // Dummy user data
+            const users = {
+                admin: { username: 'admin', password: 'admin123', role: 'admin' },
+                employee: { username: 'employee', password: 'employee123', role: 'employee' }
+            };
+            
+            loginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+                loginError.textContent = '';
+                
+                for (const user in users) {
+                    if (users[user].username === username && users[user].password === password) {
+                        loginSection.classList.add('hidden');
+                        if (users[user].role === 'admin') {
+                            adminDashboard.classList.remove('hidden');
+                        } else if (users[user].role === 'employee') {
+                            employeeDashboard.classList.remove('hidden');
+                        }
+                        return;
+                    }
+                }
+                
+                loginError.textContent = 'Invalid username or password';
+            });
+            
+            document.getElementById('logoutAdmin').addEventListener('click', () => {
+                adminDashboard.classList.add('hidden');
+                loginSection.classList.remove('hidden');
+            });
+            
+            document.getElementById('logoutEmployee').addEventListener('click', () => {
+                employeeDashboard.classList.add('hidden');
+                loginSection.classList.remove('hidden');
+            });
+        });
+    </script>
+     
+</body>
+</html>
